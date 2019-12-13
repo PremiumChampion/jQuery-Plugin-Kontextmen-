@@ -1,11 +1,12 @@
 (function ($) {
-    
+
     $.fn.Menue = $.fn.Menue || function () {
         var contextmenue = {
             properties: {
                 contentOpacity: "100%",
                 linkStyling: "false",
                 bordering: "none",
+                borderRadius: "0px",
                 transparency: "0%",
                 color: "white",
                 backgroundColor: "black",
@@ -135,7 +136,10 @@
                         $(".jsMENUE[data-uuid='" + contextmenue.properties.uuid + "']").find("li").children().css("opacity", contextmenue.properties.contentOpacity);
 
                         // Border
-                        $(".jsMENUE[data-uuid='" + contextmenue.properties.uuid + "']").find("li").css("border", contextmenue.properties.bordering);
+                        $(".jsMENUE[data-uuid='" + contextmenue.properties.uuid + "']").find("li").css({
+                            "border": contextmenue.properties.bordering,
+                            "border-radius": contextmenue.properties.borderRadius
+                        });
 
                         // Class
                         if (contextmenue.properties.class != "2c344994-03fa-4238-9223-00e41356c46a") {
@@ -163,11 +167,11 @@
                         var bottomSideContextMenue = $(".jsMENUE[data-uuid='" + contextmenue.properties.uuid + "']").position().top + $(".jsMENUE[data-uuid='" + contextmenue.properties.uuid + "']").outerHeight(true);
 
                         if (rightSideItem < rightSideContextMenue) {
-                            $(".jsMENUE[data-uuid='" + contextmenue.properties.uuid + "']").css({ left: rightSideItem - $(".jsMENUE[data-uuid='" + contextmenue.properties.uuid + "']").outerWidth(true)});
+                            $(".jsMENUE[data-uuid='" + contextmenue.properties.uuid + "']").css({ left: rightSideItem - $(".jsMENUE[data-uuid='" + contextmenue.properties.uuid + "']").outerWidth(true) });
                         }
 
                         if (bottomSideItem < bottomSideContextMenue) {
-                            $(".jsMENUE[data-uuid='" + contextmenue.properties.uuid + "']").css({ top: bottomSideItem - $(".jsMENUE[data-uuid='" + contextmenue.properties.uuid + "']").outerHeight(true)});
+                            $(".jsMENUE[data-uuid='" + contextmenue.properties.uuid + "']").css({ top: bottomSideItem - $(".jsMENUE[data-uuid='" + contextmenue.properties.uuid + "']").outerHeight(true) });
                         }
                     }
 
