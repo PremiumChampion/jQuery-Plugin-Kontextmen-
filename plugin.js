@@ -54,25 +54,25 @@
                         }
 
                         // Create entries
-                        var menü = "";
+                        var menuecontends = "";
                         for (var ind = 0; ind < contextmenue.properties.entrys.length; ind++) {
-                            menü += "<li>";
+                            menuecontends += "<li>";
                             if (contextmenue.properties.entryType.length === contextmenue.properties.entrys.length) {
                                 if (contextmenue.properties.entryType[ind].split(' ')[0] == "a") {
-                                    menü += "<" + contextmenue.properties.entryType[ind] + ">" + contextmenue.properties.entrys[ind] + "</" + contextmenue.properties.entryType[ind].split(' ')[0] + ">";
+                                    menuecontends += "<" + contextmenue.properties.entryType[ind] + ">" + contextmenue.properties.entrys[ind] + "</" + contextmenue.properties.entryType[ind].split(' ')[0] + ">";
                                 }
                                 else {
-                                    menü += "<" + contextmenue.properties.entryType[ind] + ">" + contextmenue.properties.entrys[ind] + "</" + contextmenue.properties.entryType[ind].split(' ')[0] + ">";
+                                    menuecontends += "<" + contextmenue.properties.entryType[ind] + ">" + contextmenue.properties.entrys[ind] + "</" + contextmenue.properties.entryType[ind].split(' ')[0] + ">";
                                 }
 
                             } else {
-                                menü += "<p>" + contextmenue.properties.entrys[ind] + "</p>";
+                                menuecontends += "<p>" + contextmenue.properties.entrys[ind] + "</p>";
                             }
-                            menü += "</li>";
+                            menuecontends += "</li>";
                         }
 
                         // Create contextmenuelement
-                        $("body").append("<ul class='jsMENUE' data-uuid='" + contextmenue.properties.uuid + "' style='position: absolute;'>" + menü + "</ul>");
+                        $("body").append("<ul class='jsMENUE' data-uuid='" + contextmenue.properties.uuid + "' style='position: absolute;'>" + menuecontends + "</ul>");
 
                         // Set basic CSS
                         $(".jsMENUE[data-uuid='" + contextmenue.properties.uuid + "']").css({
